@@ -1,0 +1,11 @@
+framework module RPN {
+  umbrella header "RPN.h"
+
+  export *
+  module * { export * }
+}
+
+module RPN.Swift {
+    header "RPN-Swift.h"
+    requires objc
+}

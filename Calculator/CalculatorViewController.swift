@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import RPN
 
 class CalculatorViewController: UIViewController {
+    
+    var calculator = Calculator()
     
     @IBOutlet var textField: UITextField!
     
@@ -23,19 +26,46 @@ class CalculatorViewController: UIViewController {
     
     
     // Inputs
-    @IBAction func numberButtonTapped(_ sender: UIButton) { }
+    @IBAction func numberButtonTapped(_ sender: UIButton) {
+        guard let textFieldString = textField.text else { return }
+        textField.text = "\(textFieldString)" + "\(sender.tag)"
+    }
     
-    @IBAction func decimalButtonTapped(_ sender: UIButton) { }
+    @IBAction func decimalButtonTapped(_ sender: UIButton) {
+        
+    }
     
-    // Pushing in the stack
-    @IBAction func returnButtonTapped(_ sender: UIButton) { }
+    @IBAction func returnButtonTapped(_ sender: UIButton) {
+        // Pushing in to the stack
+        guard let textFieldString = textField.text,
+            let doubleRepresentationOfTextFieldString = Double(textFieldString) else { return }
+        calculator.push(doubleRepresentationOfTextFieldString)
+        textField.text = ""
+    }
     
     // Operation
-    @IBAction func divideButtonTapped(_ sender: UIButton) { }
+    @IBAction func divideButtonTapped(_ sender: UIButton) {
+        calculator.calculate(.division)
+        updateResult()
+    }
     
-    @IBAction func multiplyButtonTapped(_ sender: UIButton) { }
+    @IBAction func multiplyButtonTapped(_ sender: UIButton) {
+        calculator.calculate(.multiplication)
+        updateResult()
+    }
     
-    @IBAction func subtractButtonTapped(_ sender: UIButton) { }
+    @IBAction func subtractButtonTapped(_ sender: UIButton) {
+        calculator.calculate(.subtraction)
+        updateResult()
+    }
     
-    @IBAction func plusButtonTapped(_ sender: UIButton) { }
+    @IBAction func plusButtonTapped(_ sender: UIButton) {
+        calculator.calculate(.addition)
+        updateResult()
+    }
+    
+    func updateResult() {
+        textField.text = "\(calculator.topValue()!)"
+    }
+    
 }

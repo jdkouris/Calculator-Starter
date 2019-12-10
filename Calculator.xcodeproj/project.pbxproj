@@ -7,12 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29E230EA239F531F00E99CE9 /* RPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E230E6239F528800E99CE9 /* RPN.framework */; };
+		29E230EB239F531F00E99CE9 /* RPN.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29E230E6239F528800E99CE9 /* RPN.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		464587DC223036AE006E613C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464587DB223036AE006E613C /* AppDelegate.swift */; };
 		464587E1223036AE006E613C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 464587DF223036AE006E613C /* Main.storyboard */; };
 		464587E3223036AF006E613C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 464587E2223036AF006E613C /* Assets.xcassets */; };
 		464587E6223036AF006E613C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 464587E4223036AF006E613C /* LaunchScreen.storyboard */; };
 		4645884722304F14006E613C /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4645884622304F14006E613C /* CalculatorViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		29E230E5239F528800E99CE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29E230E1239F528800E99CE9 /* RPN.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 29E230C8239F4FE600E99CE9;
+			remoteInfo = RPN;
+		};
+		29E230EC239F534900E99CE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29E230E1239F528800E99CE9 /* RPN.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 29E230C7239F4FE600E99CE9;
+			remoteInfo = RPN;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		4645883C22303A61006E613C /* Embed Frameworks */ = {
@@ -21,6 +40,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				29E230EB239F531F00E99CE9 /* RPN.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -28,6 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		29E230E1239F528800E99CE9 /* RPN.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RPN.xcodeproj; path = ../RPN/RPN.xcodeproj; sourceTree = "<group>"; };
 		464587D8223036AE006E613C /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		464587DB223036AE006E613C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		464587E0223036AE006E613C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -42,17 +63,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29E230EA239F531F00E99CE9 /* RPN.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29E230E2239F528800E99CE9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29E230E6239F528800E99CE9 /* RPN.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29E230E9239F531F00E99CE9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		464587CF223036AE006E613C = {
 			isa = PBXGroup;
 			children = (
+				29E230E1239F528800E99CE9 /* RPN.xcodeproj */,
 				464587DA223036AE006E613C /* Calculator */,
 				464587D9223036AE006E613C /* Products */,
+				29E230E9239F531F00E99CE9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +131,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				29E230ED239F534900E99CE9 /* PBXTargetDependency */,
 			);
 			name = Calculator;
 			productName = Calculator;
@@ -125,12 +165,28 @@
 			mainGroup = 464587CF223036AE006E613C;
 			productRefGroup = 464587D9223036AE006E613C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 29E230E2239F528800E99CE9 /* Products */;
+					ProjectRef = 29E230E1239F528800E99CE9 /* RPN.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				464587D7223036AE006E613C /* Calculator */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		29E230E6239F528800E99CE9 /* RPN.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RPN.framework;
+			remoteRef = 29E230E5239F528800E99CE9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		464587D6223036AE006E613C /* Resources */ = {
@@ -156,6 +212,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		29E230ED239F534900E99CE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RPN;
+			targetProxy = 29E230EC239F534900E99CE9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		464587DF223036AE006E613C /* Main.storyboard */ = {
@@ -296,11 +360,15 @@
 		464587EB223036AF006E613C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W4BT774F98;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Calculator",
+				);
 				INFOPLIST_FILE = Calculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,11 +383,15 @@
 		464587EC223036AF006E613C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W4BT774F98;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Calculator",
+				);
 				INFOPLIST_FILE = Calculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
